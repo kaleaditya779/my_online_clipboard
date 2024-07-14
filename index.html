@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK ClippIt</title>
+    <style>
+        body {
+            margin: 0;
+            margin-top: 30px;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eab9b9;
+        }
+
+        .MainColmn {
+            flex-direction: column;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            /*  */
+        }
+
+        #mainHead {
+            font-family: 'Amatic SC', cursive;
+            font-size: 40px;
+        }
+
+        #buttRow {
+            margin: 30px;
+            margin-bottom: 0px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        #textBox {
+            margin: 10px;
+            font-size: x-large;
+            font-weight: bold;
+            border-color: rgb(255, 255, 0);
+            border-width: 5px;
+            border-radius: 40px;
+            padding: 20px;
+        }
+
+
+        .butto {
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            /* border: none; */
+            border-radius: 8px;
+            border-width: 7px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            /* text-decoration: none; */
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .butto:hover {
+            color: black;
+            /* Change text color on hover */
+            background-color: white;
+            /* Change background color on hover */
+            border: 7px solid crimson;
+        }
+
+        #showbutto {
+            padding: revert-layer;
+            border-width: 4px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="MainColmn">
+        <h1 id="mainHead">Just ClipIt Baby</h1>
+        <form id="form" action="saveClip.php" method="post">
+            <textarea name="the_clip" id="textBox" cols="40" rows="15" placeholder="Type here.."></textarea>
+            <div id="buttRow">
+
+                <button class="butto" type="submit">SUBMIT</button>
+                <button class="butto" type="reset">RESET</button>
+            </div>
+        </form>
+
+        <div>
+            <form action="retriveClips_my.php" method="get">
+                <label for="clipNumber">Clips to display: </label>
+                <select name="clipNumber" id="limit">
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="ALL">ALL</option>
+                </select>
+                <button class="butto" id="showbutto" type="submit">DISPLAY</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
